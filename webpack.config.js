@@ -61,8 +61,7 @@ module.exports = {
             },
           },
         ],
-      },
-
+      }
     ]
   },
   devServer: {
