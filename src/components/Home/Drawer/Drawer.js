@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DrawerInputTitle from './DrawerInputTitle/DrawerInputTitle.js';
 import DrawerTextAreaDescription from './DrawerTextAreaDescription/DrawerTextAreaDescription.js';
+import appstate from '../../../appstate.js';
 
 class Drawer extends React.Component {
 
@@ -15,7 +16,7 @@ class Drawer extends React.Component {
   render(){
     if(this.props.formAdd){
       return(
-        <form className="add-and-update-block" onSubmit={this.props.addPost}>
+        <form className="add-and-update-block" onSubmit={appstate.addPost}>
           <h1 id="drawer-info">Add new post</h1>
           <label htmlFor="drawer-title">Title</label>
           <input id="drawer-title" type="text"/>
@@ -30,7 +31,7 @@ class Drawer extends React.Component {
     }
     else {
       return(
-        <form className="add-and-update-block" onSubmit={this.props.updatePost}>
+        <form className="add-and-update-block" onSubmit={appstate.updatePost}>
           <h1 id="drawer-info">Update post</h1>
           <input type="hidden" id="update-post-id" value={this.props.idUpdate}/>
           <label htmlFor="drawer-title">Title</label>

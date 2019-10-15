@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import { Redirect, Link } from 'react-router-dom';
 import LogButton from './LogButton/LogButton.js';
+import { observer } from 'mobx-react';
+import { observable } from 'mobx';
+import appstate from '../../appstate.js';
 
-class LoginForm extends React.Component {
+@observer class LoginForm extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      login: false
-    }
     this.loginUser = this.loginUser.bind(this);
     this.authUser = this.authUser.bind(this);
   }
 
   authUser(mail){
-    this.setState({login: mail});
+    appstate.isAuth = true;
   }
 
   loginUser(e){
@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
   }
 
   render(){
-    if(this.state.login == false){
+    if(appstate.isAuth == false){
       return(
         <div className="form-block">
           <form name="log-form" id="log-form" onSubmit={this.loginUser}>

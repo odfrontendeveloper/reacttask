@@ -1,11 +1,14 @@
 import React from "react";
 import LoginForm from './Login/Login.js';
 import Home from './Home/Home.js';
+import appstate from '../appstate.js';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { observable } from "mobx-react";
-// import { observable } from "mobx";
 
-function BasicExample () {
+class BasicExample extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render(){
     return(
       <Router>
         <Route exact path="/" component={
@@ -16,6 +19,7 @@ function BasicExample () {
         }/>
       </Router>
     );
+  }
 }
 
 export default BasicExample;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import appstate from '../../../appstate.js';
 
 class DeleteItemBlock extends React.Component {
 
@@ -14,7 +15,7 @@ class DeleteItemBlock extends React.Component {
           <h1>Delete this post?</h1>
           <hr/>
           <div className="drop-post-name"></div>
-          <form className="button-block" onSubmit={this.props.deleteItem}>
+          <form className="button-block" onSubmit={appstate.deleteItem}>
             <button type="submit">
               <img src="/dist/img/yes.png"/>
             </button>
